@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void llamar (View view){
         Intent i = new Intent(this, menu2.class);
         startActivity(i);
+
     }
 
 
