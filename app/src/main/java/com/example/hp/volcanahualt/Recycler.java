@@ -1,9 +1,11 @@
 package com.example.hp.volcanahualt;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +15,17 @@ import java.util.List;
  */
 public class Recycler extends AppCompatActivity {
     RecyclerView mlistcontainer;
+    TextView conocevolcanes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_mainr);
+
+        conocevolcanes = (TextView)findViewById(R.id.txtConoceVolcanes);
+        String fonts = "fonts/ComicNeueSansID.ttf";
+        Typeface T = Typeface.createFromAsset(getAssets(),fonts);
+        conocevolcanes.setTypeface(T);
 
        mlistcontainer = (RecyclerView)findViewById(R.id.listContainer);
         ListAdapter adapter=new ListAdapter(this,getDatasource());
