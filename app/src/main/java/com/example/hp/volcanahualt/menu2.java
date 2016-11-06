@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class menu2 extends AppCompatActivity {
+public class menu2 extends AppCompatActivity implements View.OnClickListener {
 
     Button msalir;
     Button mcreditos;
@@ -53,6 +53,8 @@ public class menu2 extends AppCompatActivity {
         Typeface t = Typeface.createFromAsset(getAssets(),pu);
         mpuzzle.setTypeface(t);
 
+        mvolcanes.setOnClickListener(this);
+
 
         final Button salir = (Button)findViewById(R.id.btn_salir);
         salir.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +72,18 @@ public class menu2 extends AppCompatActivity {
 
     }
 
+    public void mostrarActividad(){
+        Intent intent = new Intent(this,Recycler.class);
+        startActivity(intent);
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_Volcanes:
+                mostrarActividad();
+                break;
 
+        }
+    }
 }
