@@ -16,6 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".menu2"></activity>
+        <activity android:name=".MainVolcanes"></activity>
+        <activity android:name=".Recycler"></activity>
+
     </application>
 
 </manifest>

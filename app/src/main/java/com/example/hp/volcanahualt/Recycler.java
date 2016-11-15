@@ -10,9 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Owner on 05/11/2016.
- */
+
 public class Recycler extends AppCompatActivity {
     RecyclerView mlistcontainer;
     TextView conocevolcanes;
@@ -37,10 +35,12 @@ public class Recycler extends AppCompatActivity {
     private List<String> getDatasource(){
         List<String> list= new ArrayList<>();
 
-       for (int i=0;i<7;i++){
-           list.add("Departamento 1"+i);
-       }
-
+           list.add("Chinandega");
+           list.add("León");
+           list.add("Masaya");
+           list.add("Managua");
+           list.add("Granada");
+           list.add("Rivas");
         return list;
     }
 }
