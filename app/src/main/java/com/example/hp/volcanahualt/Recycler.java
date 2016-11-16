@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,18 @@ public class Recycler extends AppCompatActivity {
         mlistcontainer.setLayoutManager(new LinearLayoutManager(this));
         mlistcontainer.setAdapter(adapter);
 
-    }
+        mlistcontainer.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), mlistcontainer, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        Toast.makeText(getApplicationContext(), position + "", Toast.LENGTH_LONG);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
+    }//fin del metodo
 
     private List<String> getDatasource(){
         List<String> list= new ArrayList<>();
